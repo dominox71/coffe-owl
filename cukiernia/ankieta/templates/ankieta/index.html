@@ -1,0 +1,15 @@
+{% extends "ankieta/base.html" %}
+{% block content %}
+{% if lista_pytan %}
+
+{% for pytanie in lista_pytan %}
+<div class="alert alert-warning" role="alert">
+    <a href="{% url 'ankieta:detale' pytanie.id %}">{{ pytanie.tekst_pytania }}</a>
+</div>
+{% endfor %}
+
+{% else %}
+<h2>Nie ma jeszcze pytań w ankiecie</h2>
+{% endif %}
+
+{% endblock %}
