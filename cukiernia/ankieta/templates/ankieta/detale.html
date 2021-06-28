@@ -1,0 +1,37 @@
+{% extends "ankieta/base.html" %}
+{% block content %}
+
+<!-- <div class="container-fluid" style="margin-top: 20px;">
+  <div class="container overflow-hidden">
+    <div class="row gx-5">
+      <div class="col">
+       <div class="p-3 border bg-light text-center">{{ pytanie.tekst_pytania }}</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border bg-light text-center">{{ pytanie.data_publikacji }}</div>
+      </div>
+    </div>
+  </div> -->
+  {% if error_message %}<p><strong>{{ error_message}}</strong></p>{% endif %}
+  
+  <div class="pytanka" style="margin-top: 20px;">
+    <p class="lead">
+        {{pytanie.tekst_pytania}}
+    </p>
+    <form class="row g-3" action=" {% url 'ankieta:glosuj' pytanie.id %}" method="post">{% csrf_token %}
+    {% for wybor in pytanie.wybor_set.all %}
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="wybor" id="wybor{{ forloop.counter }}"  value="{{wybor.id }}"   >
+        <label class="form-check-label" for="flexRadioDefault1">
+          {{wybor.tekst_odpowiedzi}}
+        </label>
+    </div>
+    {% endfor %}
+    <div class="col-6">
+        <button type="submit" class="btn btn-outline-success btn-lg">Głosuj</button>
+    </div>
+   
+</form>
+</div>
+
+{% endblock %}

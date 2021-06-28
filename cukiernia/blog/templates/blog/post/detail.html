@@ -1,0 +1,36 @@
+{% extends "blog/base.html" %}
+
+{% block title %}{{post.title}}{% endblock %}
+
+{% block content %}
+<h1> {{post.title}} </h1>
+<p class="date">Wątek otwarty {{post.publish}} przez {{post.author}}</p>
+{{post.body|linebreaks}}
+{% with comments.count as total_comments %}
+<h2>
+    {{total_comments}} komentarz {{total_comments|pluralize:"e"}}
+</h2>
+{% endwith %}
+{%for comment in comments %}
+<div class="comment">
+    <p class="info">
+        Komentarz {{forloop.counter}} dodany przez {{ comment.name }}
+        {{ comment.created }}
+    </p>
+    {{comment.body|linebreaks}}
+</div>
+{% empty %}
+<p>Nie ma jeszcze żadnych komentarzy</p>
+{% endfor %}
+
+{% if new_comment %}
+    <h2>Twój komentarz został dodany.</h2>
+{% else %}
+    <center><h2>Podziel się opinią:</h2>
+    <form action="." method="post">
+        {{ comment_form.as_p }}
+        {% csrf_token %}
+        <p><input type="submit" class="btn btn-outline-success" value="Dodaj komentarz"></p>
+    </form></center>
+{% endif %}
+{% endblock %}

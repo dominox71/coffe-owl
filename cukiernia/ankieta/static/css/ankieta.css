@@ -1,0 +1,74 @@
+body {
+    background: tan url("../images/szary.png") repeat;
+}
+
+.page-header{
+    background-color: #1a0b00;
+    margin-top: 0px;
+    padding: 20px 20px 20px 30px;
+}
+h1,h2,h1 a, h2 a{
+    color: #ff7300;
+    margin-top: 20px;
+    padding:20px;
+    font-family: 'Fascinate', cursive;
+} 
+
+.alert-warning {
+    color: #5c0300;
+    background-color: #f3f3f3;
+    border-color: #ad8200;
+}
+
+.alert {
+    position: relative;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .40rem;
+    width: 50%;
+    margin: 20px;
+}
+
+.alert a, .alert p {
+    color: #212529;
+    text-decoration: none;
+    font-style: oblique;
+    font-weight: 900;
+}
+.progress {
+    width: 50%;
+    display: flex;
+    height: 1rem;
+    overflow: hidden;
+    font-size: .75rem;
+    background-color: #e9ecef;
+    border-radius: .25rem;
+}
+.boks{
+    width: 50%;
+    padding-top: 20px;
+}
+
+#header {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background: #ff7e10 !important;
+    color: #000;
+    overflow: hidden;
+}
+
+.container-fluid{
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+}
+.pytanka{
+    margin-left: 50px;
+}

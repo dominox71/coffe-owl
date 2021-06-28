@@ -1,0 +1,19 @@
+{% extends "blog/base.html" %}
+{%block title%}COFFE OWL {% endblock %}
+{% block content %}
+{%load static %}
+<center>
+<img class="logo" src="{% static 'images/logo.png' %}"/>
+</center>
+{% for post in posts %}
+    <h2>
+        Wątek:
+        <a href="{{ post.get_absolute_url }}">{{post.title}}</a>
+    </h2>
+    <p class="date">
+        Założony {{ post.publish }} przez {{ post.author }}
+    </p>
+
+{% endfor %}
+{%include "pagination.html" with page=posts %}
+{% endblock %}
