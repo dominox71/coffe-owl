@@ -20,5 +20,5 @@ urlpatterns = [
     path('ankieta/', include('ankieta.urls')),
     path('blog/', include('blog.urls',namespace='blog')),
     path('admin/', admin.site.urls),
-    path('glowna/', include('glowna.urls')),
+    path('', include('glowna.urls')),
 ]
