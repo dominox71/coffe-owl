@@ -123,4 +123,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 STATICFILES_DIRS=(
     "/home/project_root/ankieta/static",
+    "/home/project_root/blog/static",
+    "/home/project_root/glowna/static",
 )
