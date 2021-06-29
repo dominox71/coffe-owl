@@ -75,3 +75,7 @@ form {
     -moz-transform: scale(1.2);
     z-index: 0;
 }
+.mySlides{
+    width: 820px;
+    height: 500px;
+}

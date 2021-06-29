@@ -41,14 +41,35 @@
     {% block content %}
 <center>
 <img class="logo" src="{% static 'images/logo.png' %}"/>
-    <div class="obrazki">
-<img class="ksiazki" src="{% static 'images/menu1.png' %}"/>
-<img class="ksiazki" src="{% static 'images/menu2.png' %}"/>
-        <h1>Polecane Książki</h1>
-<img class="ksiazki" src="{% static 'images/ksiazki.jpg' %}"/>
-    </div>
 </center>
-
+<div class="obrazki">
+    <div class="slajdy">
+        <img class="mySlides" src="{% static 'images/coffee-983955_1920.jpg' %}">
+        <img class="mySlides" src="{% static 'images/coffee-984328_1920.jpg' %}">
+        <img class="mySlides" src="{% static 'images/library-4317851_1920.jpg' %}">
+    </div>
+    <script>
+        var myIndex = 0;
+        carousel();
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) {myIndex = 1}
+            x[myIndex-1].style.display = "block";
+            setTimeout(carousel, 5000);
+        }
+    </script>
+    <center>
+        <img src="{% static 'images/menu1.png' %}"/>
+        <img  src="{% static 'images/menu2.png' %}"/>
+        <h1>Polecane Książki</h1>
+        <img src="{% static 'images/ksiazki.jpg' %}"/>
+    </center>
+</div>
     {% endblock %}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
